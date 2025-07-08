@@ -1,18 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Public Keys - bieggerm.com</title>
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Public Keys - bieggerm.com</title>
-</head>
+      body {
+        font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f7f6;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+      }
 
-<body>
-  <h2>Marius Biegger - Public GPG Keys</h2>
-  <h3>Key for mail@bieggerm.com (preferred)</h3>
-  <pre>
------BEGIN PGP PUBLIC KEY BLOCK-----
+      .container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        width: 100%;
+      }
 
+      h2 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.2em;
+        border-bottom: 2px solid #eceff1;
+        padding-bottom: 15px;
+      }
+
+      h3 {
+        color: #34495e;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 1.6em;
+      }
+
+      .key-section {
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed #e0e0e0;
+      }
+
+      .key-section:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      pre {
+        background-color: #e8f0f2;
+        border: 1px solid #ccd9de;
+        border-radius: 5px;
+        padding: 15px;
+        overflow-x: auto;
+        font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+        font-size: 0.9em;
+        color: #2d3e50;
+        margin-bottom: 20px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        
+        user-select: all;
+        -webkit-user-select: all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+      }
+
+      code {
+        background-color: #eceff1;
+        border: 1px solid #dbe4e8;
+        border-radius: 3px;
+        padding: 3px 6px;
+        font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+        font-size: 0.9em;
+        color: #c0392b;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 20px;
+
+        user-select: all;
+        -webkit-user-select: all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Marius Biegger - Public GPG Keys</h2>
+
+      <div class="key-section">
+        <h3>Key for mail@bieggerm.com (preferred)</h3>
+        <pre id="pgp-key-2">-----BEGIN PGP PUBLIC KEY BLOCK-----
 mQENBGhCM34BCADiSNxrmAEbLtc2E4cAyVH5Ykq1/V31wOMN3vjSlVSjoruRjTGY
 r/a/R6kBVdbXwtxDkhlE4olifYauXe2T4IiJYskgKlesvgZi6gczzttsSs4RLfeW
 Bx5yWzbktT5ANKOhk2MmPMSh0Xms2BsU7MgjaAlTr4LvAJbvGxFZ4UwCZczLVDtN
@@ -28,14 +126,13 @@ suwwumAPgGGXvmJzepGezPkRn8XBJEgv8KiiEY7nPy9pdzVpdyKMyRPcp/D199Gz
 37jKHuYw26eRe5kIn5fbKcaabAZfUbk64ezp0+MejOT4KnE7n5ZDlKSDU8FM9da7
 iLh8xM9KDKHmqngq8sIwE2KvlSekrTM=
 =/Xwz
------END PGP PUBLIC KEY BLOCK-----
-    </pre>
-  <p><code>Fingerprint: E55DB D0A5D 931DB A631E 91F4D B445E 1D028 24905</code></p>
-<br>
-  <h3>Key for biegger.marius@gmail.com</h3>
-  <pre>
------BEGIN PGP PUBLIC KEY BLOCK-----
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+        <p><code>Fingerprint: E55DB D0A5D 931DB A631E 91F4D B445E 1D028 24905</code></p>
+      </div>
 
+      <div class="key-section">
+        <h3>Key for biegger.marius@gmail.com</h3>
+        <pre id="pgp-key-1">-----BEGIN PGP PUBLIC KEY BLOCK-----
 mQENBGgkrpcBCACWcRdXOXJl9FwP0/D0y9QXXTGgy6dLzS5TQWwPW9rvlD5r0x+k
 ECqzoykZLtVx6zpBG1ee6QS06zoXXxQUEcq6jRH0fJu1uM49riRTYDey6fmwUu0d
 amt6c0Z8B+8sD95hwd+OGi7E5D0JoBwXFgXVhX2gPcLQ617WLMvmqlDWu4njkuD4
@@ -51,16 +148,14 @@ e6P8xwFOo9hb431V2QGy++jTGsJX07i0AgwBeM+9qigPjAozIKvPYTYqXuXate3P
 jtlCFgaZhkLriFOEWrXfqIxlFfN78t5PnzXEsHrnmh3HdnQjqEBbM4+p/jlRx6SH
 N7jcOpFa4JYLxEmfuG4ADwN7OUCJ6hnDo9KwtM8UaaNvY5HChVE=
 =rBxe
------END PGP PUBLIC KEY BLOCK-----
-    </pre>
-  <p><code>Fingerprint: D4871 09C8E 3EF65 E4A28 A8AA3 72C09 A020E 700A0</code></p>
-  <br>
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+        <p><code>Fingerprint: D4871 09C8E 3EF65 E4A28 A8AA3 72C09 A020E 700A0</code></p>
+      </div>
 
-
-  <h2>SSH Public Key:</h2>
-  <p>
-    <code>ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAHEQAogkdCyVsQOQsjGdX8jXvVTt+yCJ9PLWQTGfE136n1hseSqF+rCtJ7OzE0HKQV5TY/o3JrXMV7xQ/tOxf7O1QAYQ+GVlZNPm2u6IbUCQ/8Rq+OU5rZQc2aWF6E/CpQ2FOsolchAjE6Svv/h08pH94VJWpc+e2UQDfeP29VGJ66bZQ== mail@bieggerm.com</code>
-  </p>
-</body>
-
+      <div class="key-section">
+        <h2>SSH Public Key:</h2>
+        <p><code id="ssh-key">ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAHEQAogkdCyVsQOQsjGdX8jXvVTt+yCJ9PLWQTGfE136n1hseSqF+rCtJ7OzE0HKQV5TY/o3JrXMV7xQ/tOxf7O1QAYQ+GVlZNPm2u6IbUCQ/8Rq+OU5rZQc2aWF6E/CpQ2FOsolchAjE6Svv/h08pH94VJWpc+e2UQDfeP29VGJ66bZQ== mail@bieggerm.com</code> </p>
+      </div>
+    </div>
+  </body>
 </html>
