@@ -5,75 +5,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bieggerm.com - Public Keys</title>    
-    <style>
-        body {
-            font-family: monospace;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            line-height: 1.6;
-            background: #fff;
-            color: #333;
-        }
+   <style>
+    :root {
+        --bg: #ffffff;
+        --fg: #222222;
+        --muted: #999999;
+        --rule: #dddddd;
+        --link: #0b5bd3;
+        --link-visited: #5a35a3;
+        --focus: #ffbf47;
+        --maxw: 46rem;
+        --base: 16px;
+        --lh: 1.65;
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.5rem;
+        --space-6: 2rem;
+        --radius: 4px;
+    }
 
-        h1 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg: #0e0e0f;
+            --fg: #e5e5e5;
+            --muted: #9aa0a6;
+            --rule: #2a2a2a;
+            --link: #6ea8ff;
+            --link-visited: #b199ff;
+            --focus: #ffbf47;
         }
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
 
-        li {
-            margin: 15px 0;
-        }
+    body {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: var(--base);
+        line-height: var(--lh);
+        max-width: var(--maxw);
+        margin: 8vh auto;
+        padding: 0 var(--space-4);
+        background: var(--bg);
+        color: var(--fg);
+    }
 
-        a {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    header {
+        margin-bottom: var(--space-6);
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    h1 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin: 0 0 var(--space-3);
+        padding-bottom: var(--space-3);
+        border-bottom: 2px solid var(--fg);
+    }
 
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            font-size: 0.9em;
-        }
+    h2 {
+        font-size: 1.2rem;
+        margin-top: var(--space-5);
+        margin-bottom: var(--space-2);
+    }
 
-        pre {
-            border: 1px solid #ccd9de;
-            border-radius: 5px;
-            padding: 15px;
-            overflow-x: auto;
-            font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
-            font-size: 0.9em;
-            margin-bottom: 20px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            user-select: all;
-        }
+    main p {
+        margin: 0 0 var(--space-4);
+    }
 
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: var(--space-3);
+    }
+
+    a {
+        color: var(--link);
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    a:visited {
+        color: var(--link-visited);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    :where(a, button, [tabindex]:not([tabindex="-1"])):focus {
+        outline: 2px dashed var(--focus);
+        outline-offset: 3px;
+        border-radius: var(--radius);
+    }
+
+    .footer {
+        margin-top: var(--space-6);
+        padding-top: var(--space-4);
+        border-top: 1px solid var(--rule);
+        font-size: 0.95em;
+        color: var(--muted);
+    }
+
+    .footer a {
+        font-weight: 600;
+    }
+
+    /* Code blocks */
+    pre {
+        background: #f5f7f9;
+        color: #1a1a1a;
+        padding: var(--space-4);
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        overflow-x: auto;
+        font-size: 0.9em;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        user-select: all;
+        margin-bottom: var(--space-5);
+    }
+
+    code {
+        background: #f5f7f9;
+        color: #1a1a1a;
+        padding: var(--space-1) var(--space-2);
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        font-size: 0.9em;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        user-select: all;
+        display: block;
+        margin-top: var(--space-2);
+        margin-bottom: var(--space-4);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        pre,
         code {
-            border: 1px solid #dbe4e8;
-            border-radius: 3px;
-            padding: 3px 6px;
-            font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
-            font-size: 0.9em;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            display: block;
-            margin-top: 5px;
-            margin-bottom: 20px;
-            user-select: all;
+            background: #1c1c1e;
+            color: #e5e5e5;
+            border-color: var(--rule);
         }
-    </style>
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+        nav a {
+            padding: var(--space-1) 0;
+            display: inline-block;
+        }
+
+        nav li + li {
+            margin-top: var(--space-4);
+        }
+    }
+
+    @media print {
+        :root {
+            --bg: #ffffff;
+            --fg: #000000;
+            --rule: #000000;
+            --link: #000000;
+            --link-visited: #000000;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 12pt;
+        }
+
+        a::after {
+            content: " (" attr(href) ")";
+            font-weight: normal;
+        }
+    }
+</style>
+
 </head>
 
 <body>
